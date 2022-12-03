@@ -1,0 +1,25 @@
+<div class="card shadow border-0" style="width: 18rem;">
+    <img src="https://ripleype.imgix.net/http%3A%2F%2Fs3.amazonaws.com%2Fimagenes-sellers-mercado-ripley%2F2020%2F10%2F15184214%2FLine-OF-Design-Mesa-TXT-Lineal-Madera-Envejecido-4.jpg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=e5667f01e754be3824c4fe048cf7d7a6" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{item.nombre}}</h5>
+      <p class="card-text">{{item.descripcion}}</p>
+      <p>Precio por menor S/{{item.precioUnidad}} </p>
+      <p>Precio por mayor S/{{item.precioMayor}} </p>
+      <h5>Tipo de material</h5>
+      <ul>
+        <li *ngFor="let item of item.tipoMaterial">
+          {{item}}
+        </li>
+      </ul>
+      <h5>Tipo de Mueble</h5>
+      <ul>
+        <li *ngFor="let item of item.tipoMueble">
+          {{item}}
+        </li>
+      </ul>
+      <a [routerLink]="['/','detalle', item._id]" class="btn btn-primary">Modificar</a>
+      <a (click)="eliminarMueble(item._id)"  class="btn btn-primary mx-2">Eliminar</a>
+      
+    </div>
+  </div>
+
